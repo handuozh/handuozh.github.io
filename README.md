@@ -1,5 +1,5 @@
 ## Hi there 👋
-### I'm Zhang Handuo,
+### I'm Zhang Handuo (https://zhanghanduo.com),
 
 a PhD student at Nanyang Technological University, Singapore. 
 
