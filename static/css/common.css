@@ -28,14 +28,14 @@
   --ls-font-weight: 400;
   --ls-font-letter-spacing: 0.002em;
   --ls-font-line-height: 1.5;
-  --ls-main-content-max-width: 700px;
+  /* --ls-main-content-max-width: 700px; */
   --ls-border-radius-low: 3px;
   --ls-border-radius-medium: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    background-color: #252528;
+    background-color: #282a36;
   }
 
   html[data-theme=light] {
@@ -167,9 +167,12 @@ html {
 }
 
 body {
-  color: #24292e;
-  line-height: 1.5;
-  background-color: transparent;
+  /* color: #24292e; */
+  font-weight: var(--ls-font-weight);
+  letter-spacing: var(--ls-font-letter-spacing);
+  line-height: var(--ls-font-line-height);
+  font-size: var(--ls-page-text-size);
+  background-color: #282a36;
   min-height: 100%;
   word-break: break-word; /* compatible for overflow-wrap: anywhere */
 }
