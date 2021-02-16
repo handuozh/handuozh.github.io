@@ -1,17 +1,41 @@
 :root {
-  --ls-tag-text-opacity: 0.6;
+  --background: #252528;
+  --light-background: #282A35;
+  --lighter-background: #424450;
+  --dark-background: #202023;
+  --darker-background: #191a21;
+  --foreground: #BEBEBF;
+  --current-line: #44475a;
+  --comment: #6272a4;
+  --white: var(--foreground);
+  --white-hover: #f8f8f280;
+  --red: #ff5555;
+  --orange: #ffb86c;
+  --yellow: #f1fa8c;
+  --green: #50fa7b;
+  --purple: #bd93f9;
+  --purple-hover: #bf93f980;
+  --cyan: #8be9fd;
+  --cyan-hover: #8be9fd80;
+  --pink: #E9B071;
+  --pink-hover: #ff79c680;
+
+  --ls-tag-text-opacity: 0.8;
   --ls-tag-text-hover-opacity: 0.8;
-  --ls-page-text-size: 1em;
+  --ls-page-text-size: 16px;
   --ls-page-title-size: 36px;
   --ls-font-family: 'Inter';
+  --ls-font-weight: 400;
+  --ls-font-letter-spacing: 0.002em;
+  --ls-font-line-height: 1.5;
   --ls-main-content-max-width: 700px;
-  --ls-border-radius-low: 4px;
-  --ls-border-radius-medium: 8px;
+  --ls-border-radius-low: 3px;
+  --ls-border-radius-medium: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    background-color: #002b36;
+    background-color: #252528;
   }
 
   html[data-theme=light] {
@@ -27,48 +51,53 @@
 
 .dark-theme,
 html[data-theme=dark] {
-  --ls-primary-background-color: #002b36;
-  --ls-secondary-background-color: #023643;
-  --ls-tertiary-background-color: #08404f;
-  --ls-quaternary-background-color: #094b5a;
+  --ls-main-content-max-width: 850px;
+  --ls-primary-background-color: var(--background);
+  --ls-secondary-background-color: var(--dark-background);
+  --ls-tertiary-background-color: var(--light-background);
+  --ls-quaternary-background-color: var(--light-background);
+  --ls-quinary-background-color: var(--darker-background);
   --ls-table-tr-even-background-color: #03333f;
-  --ls-active-primary-color: #8ec2c2;
-  --ls-active-secondary-color: #d0e8e8;
+  --ls-active-primary-color: var(--foreground);
+  --ls-active-secondary-color: var(--foreground);
   --ls-block-properties-background-color: #02222a;
   --ls-block-ref-link-text-color: #1a6376;
-  --ls-search-background-color: var(--ls-primary-background-color);
-  --ls-border-color: #0e5263;
+  --ls-search-background-color: var(--background);
+  --ls-border-color: #848484;
   --ls-guideline-color: #0b4a5a;
-  --ls-menu-hover-color: var(--ls-secondary-background-color);
-  --ls-primary-text-color: #a4b5b6;
-  --ls-secondary-text-color: #dfdfdf;
-  --ls-title-text-color: #93a1a1;
-  --ls-link-text-color: rgb(138, 187, 187);
-  --ls-link-text-hover-color: var(--ls-active-secondary-color);
-  --ls-link-ref-text-color: var(--ls-link-text-color);
-  --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
-  --ls-tag-text-color: var(--ls-link-text-color);
-  --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-menu-hover-color: var(--light-background);
+  --ls-primary-text-color: var(--foreground);
+  --ls-secondary-text-color: var(--white-hover);
+  --ls-title-text-color: var(--foreground);
+  --ls-link-text-color: var(--pink);
+  --ls-link-text-hover-color: var(--pink-hover);
+  --ls-link-ref-text-color: var(--pink);
+  --ls-link-ref-text-hover-color: var(--pink-hover);
+  --ls-tag-text-color: var(--purple);
+  --ls-tag-text-hover-color: var(--purple-hover);
   --ls-slide-background-color: var(--ls-primary-background-color);
-  --ls-block-bullet-border-color: #0f4958;
-  --ls-block-bullet-color: #608e91;
-  --ls-block-highlight-color: #0a3d4b;
-  --ls-selection-background-color: #338fff;
-  --ls-page-checkbox-color: #6093a0;
-  --ls-page-checkbox-border-color: var(--ls-primary-background-color);
-  --ls-page-blockquote-color: var(--ls-primary-text-color);
-  --ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
-  --ls-page-blockquote-border-color: var(--ls-border-color);
-  --ls-page-inline-code-color: var(--ls-primary-text-color);
-  --ls-page-inline-code-bg-color: #01222a;
-  --ls-scrollbar-foreground-color: rgba(255, 255, 255, 0.05);
-  --ls-scrollbar-background-color: rgba(30, 60, 67, 0.9);
-  --ls-scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.2);
-  --ls-head-text-color: var(--ls-link-text-color);
-  --ls-icon-color: var(--ls-link-text-color);
-  --ls-search-icon-color: var(--ls-link-text-color);
-  --ls-a-chosen-bg: var(--ls-secondary-background-color);
-  --ls-right-sidebar-code-bg-color: #04303c;
+  --ls-block-bullet-border-color: var(--current-line);
+  --ls-block-bullet-color: var(--foreground);
+  --ls-block-highlight-color: var(--current-line);
+  --ls-block-properties-background-color: var(--light-background);
+  --ls-page-checkbox-color: transparent;
+  --ls-page-checkbox-border-color: var(--comment);
+  --ls-page-blockquote-color: var(--foreground);
+  --ls-page-blockquote-bg-color: var(--light-background);
+  --ls-page-blockquote-border-color: var(--yellow);
+  --ls-page-inline-code-color: var(--orange);
+  --ls-page-inline-code-bg-color: var(--background);
+  --ls-scrollbar-background-color: var(--background);
+  --ls-scrollbar-foreground-color: var(--darker-background);
+  --ls-scrollbar-thumb-hover-color: var(--light-background);
+  --ls-selection-background-color: var(--comment);
+  --ls-slide-background-color: var(--ls-primary-background-color);
+  --ls-guideline-color: var(--ls-border-color);
+  --ls-head-text-color: var(--foreground);
+  --ls-icon-color: var(--white-hover);
+  --ls-search-icon-color: var(--white-hover);
+  --ls-a-chosen-bg: var(--light-background);
+  --ls-right-sidebar-code-bg-color: var(--light-background);
   --color-level-1: var(--ls-secondary-background-color);
   --color-level-2: var(--ls-tertiary-background-color);
   --color-level-3: var(--ls-quaternary-background-color);
@@ -711,3 +740,47 @@ hr {
     resize: both;
     overflow: hidden;
 }
+
+/* === 外部链接加图标 ====*/ 
+a.external-link {border-bottom: 0px;}
+a.external-link:after {
+    display:inline-block;
+    content:"";
+    width: 21px;
+    height:16px;
+    background: 
+      transparent
+        50% 200%/54%
+        url('https://svgshare.com/i/SWJ.svg') no-repeat; 
+    filter: invert(45%) sepia(100%) saturate(100%) hue-rotate(0deg) brightness(110%) contrast(249%);
+}
+
+
+/* ==== colorful indent levels ===*/
+.block-children {
+	border-left: 0px solid;
+}
+.block-children [level="3"] {
+	border-left: 1px solid;
+	border-left-color: #ff00005c;}
+.block-children [level="4"] {
+	border-left: 1px solid;
+	border-left-color: #ec87225e;}
+.block-children [level="5"] {
+	border-left: 1px solid;
+	border-left-color: #ffff0052;}
+.block-children [level="6"] {
+	border-left: 1px solid;
+	border-left-color: #65d95b7a;}
+.block-children [level="7"] {
+	border-left: 1px solid;
+	border-left-color: #2ca0df5e;}
+.block-children [level="8"] {
+	border-left: 1px solid;
+	border-left-color: #9f8af061;}
+.block-children [level="9"] {
+	border-left: 1px solid;
+	border-left-color: #f15bf74f;}
+
+/* ==== fix spacing - TWEAK VALUES ! ===*/
+.ls-block { margin:-2px 0px -2px -1px !important; padding: 4px 1px !important;}
