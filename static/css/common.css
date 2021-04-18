@@ -810,3 +810,13 @@ a.tooltip-priority {
 .katex * {
   border-color: var(--ls-primary-text-color);
 }
+
+a.page-op {
+    svg {
+        transform: scale(0.9);
+    }
+}
+
+.search-more {
+    background: var(--ls-a-chosen-bg);
+}
